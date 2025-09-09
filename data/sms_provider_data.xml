@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- mNotify SMS Provider Record -->
+        <record id="sms_provider_mnotify" model="sms.provider">
+            <field name="name">mNotify</field>
+            <field name="provider_type">mnotify</field>
+            <field name="sequence">10</field>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>
+
+## 5. views/sms_provider_views.xml
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit SMS Provider Form View -->
+        <record id="sms_provider_form_view_mnotify" model="ir.ui.view">
+            <field name="name">sms.provider.form.mnotify</field>
+            <field name="model">sms.provider</field>
+            <field name="inherit_id" ref="sms.sms_provider_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='provider_config']" position="inside">
+                    <group string="mNotify Configuration" attrs="{'invisible': [('provider_type', '!=', 'mnotify')]}">
+                        <field name="mnotify_api_key" password="True" required="1" 
+                               attrs="{'required': [('provider_type', '=', 'mnotify')]}"/>
+                        <field name="mnotify_sender_id" 
+                               attrs="{'required': [('provider_type', '=', 'mnotify')]}"/>
+                        <div colspan="2">
+                            <p class="text-muted">
+                                <i class="fa fa-info-circle"/> 
+                                Get your API key from your mNotify dashboard. 
+                                The sender ID will appear as the sender of your SMS messages.
+                            </p>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        
+        <!-- Add Test Connection Button -->
+        <record id="sms_provider_form_view_mnotify_button" model="ir.ui.view">
+            <field name="name">sms.provider.form.mnotify.button</field>
+            <field name="model">sms.provider</field>
+            <field name="inherit_id" ref="sms.sms_provider_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="action_test_connection" type="object" string="Test Connection" 
+                            class="btn-secondary" attrs="{'invisible': [('provider_type', '!=', 'mnotify')]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form_inherit_mnotify" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.mnotify</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <!-- Try injecting after an existing element -->
+                <xpath expr="//div[@data-key='base_setup']" position="after">
+                    <div class="app_settings_block" data-string="SMS mNotify" data-key="sms_mnotify">
+                        <h2>SMS mNotify Integration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="use_mnotify"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="use_mnotify"/>
+                                    <div class="text-muted">
+                                        Use mNotify SMS gateway instead of Odoo's default IAP SMS service
+                                    </div>
+                                    <div class="content-group" invisible="not use_mnotify">
+                                        <div class="mt16">
+                                            <button name="action_open_sms_gateways" 
+                                                    type="object" 
+                                                    string="Configure Gateways" 
+                                                    class="btn-link" 
+                                                    icon="fa-arrow-right"/>
+                                            <span class="text-muted">
+                                                (<field name="mnotify_gateway_count"/> configured)
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

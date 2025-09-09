@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sms_gateway_admin,SMS Gateway Admin,model_sms_gateway,base.group_system,1,1,1,1
+access_sms_gateway_user,SMS Gateway User,model_sms_gateway,base.group_user,1,0,0,0

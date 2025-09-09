@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>mNotify SMS Provider</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .logo { max-width: 200px; margin-bottom: 20px; }
+        h1 { color: #2E7D32; }
+        h2 { color: #1976D2; margin-top: 30px; }
+        .features { background-color: #f5f5f5; padding: 20px; border-radius: 8px; }
+        .feature-list { list-style-type: none; padding-left: 0; }
+        .feature-list li { margin: 10px 0; padding-left: 25px; position: relative; }
+        .feature-list li:before { content: "✓"; color: #4CAF50; font-weight: bold; position: absolute; left: 0; }
+        .config-section { background-color: #e3f2fd; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .warning { background-color: #fff3e0; padding: 10px; border-left: 4px solid #ff9800; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>mNotify SMS Provider for Odoo</h1>
+        <p>Professional SMS Integration for Your Business Communications</p>
+    </div>
+
+    <h2>🚀 Features</h2>
+    <div class="features">
+        <ul class="feature-list">
+            <li>Easy integration with mNotify SMS service</li>
+            <li>Bulk SMS sending capabilities</li>
+            <li>Automatic phone number formatting</li>
+            <li>Test connection functionality</li>
+            <li>Secure API key management</li>
+            <li>Error handling and logging</li>
+            <li>Native Odoo SMS integration</li>
+            <li>Customizable sender ID</li>
+        </ul>
+    </div>
+
+    <h2>📋 Requirements</h2>
+    <ul>
+        <li>Odoo 17.0 or later</li>
+        <li>Active mNotify account</li>
+        <li>Valid mNotify API key</li>
+        <li>Internet connectivity</li>
+    </ul>
+
+    <h2>⚙️ Configuration</h2>
+
+    <div class="config-section">
+
+    <h3>Step 1: Configure Your Gateway</h3>
+    <ol>
+        <li>Edit the <strong>"mNotify SMS"</strong> gateway (or create a new one)</li>
+        <li>Fill in these fields:
+        <ul>
+            <li><strong>API Key</strong>: Get this from your mNotify dashboard</li>
+            <li><strong>Sender ID</strong>: Your preferred sender name (e.g., "YourCompany")</li>
+            <li><strong>Country Prefix</strong>: "+233" for Ghana (optional)</li>
+            <li><strong>Test Number</strong>: Your phone number for testing (e.g., +2332********)</li>
+            <li><strong>Active</strong>: Check this box to enable the gateway</li>
+        </ul>
+        </li>
+    </ol>
+
+    <h3>Step 2: Test Your Setup</h3>
+    <ol>
+        <li>Click the <strong>"Test Gateway"</strong> button</li>
+        <li>Check your phone for the test SMS</li>
+        <li>If you receive it, you’re ready to go!</li>
+    </ol>
+
+    <h3>Step 3: Enable mNotify</h3>
+    <ol>
+        <li>Go to <strong>Settings → Technical → System Parameters</strong></li>
+        <li>Create a new parameter:
+        <ul>
+            <li><strong>Key</strong>: <code>sms_mnotify.use_mnotify</code></li>
+            <li><strong>Value</strong>: <code>True</code></li>
+        </ul>
+        </li>
+        <li>Save</li>
+    </ol>
+
+    <p><strong>✅ That’s it!</strong> All SMS from Odoo will now use your mNotify account.</p>
+
+    </div>
+
+
+    <h2>🔧 Usage</h2>
+    <p>Once configured, you can send SMS messages from anywhere in Odoo:</p>
+    <ul>
+        <li>Customer and vendor contact forms</li>
+        <li>Marketing campaigns</li>
+        <li>Automated workflows and reminders</li>
+        <li>Sales and purchase processes</li>
+        <li>Any custom module with SMS functionality</li>
+    </ul>
+
+    <div class="warning">
+        <strong>Note:</strong> Make sure to comply with local SMS regulations and obtain proper consent before sending marketing messages.
+    </div>
+
+    <h2>📞 Support</h2>
+    <p>For technical support or questions about this module, please contact your system administrator (support@mnotify.com).</p>
+
+    <h2>📄 License</h2>
+    <p>This module is licensed under LGPL-3. See the LICENSE file for details.</p>
+
+    <hr style="margin-top: 40px;">
+    <p style="text-align: center; color: #666; font-size: 12px;">
+        © 2025 mNotify. All rights reserved.
+    </p>
+</body>
+</html>
